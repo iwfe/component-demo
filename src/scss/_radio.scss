@@ -1,0 +1,44 @@
+
+
+
+.item-radio {
+  padding: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.item-radio .item-content {
+  
+  padding-right: $item-padding * 4;
+}
+
+.item-radio .radio-icon {
+  
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: $z-index-item-radio;
+  visibility: hidden;
+  padding: $item-padding - 2;
+  height: 100%;
+  font-size: 24px;
+}
+
+.item-radio input {
+  
+  position: absolute;
+  left: -9999px;
+
+  &:checked + .radio-content .item-content {
+    
+    background: #f7f7f7;
+  }
+
+  &:checked + .radio-content .radio-icon {
+    
+    visibility: visible;
+  }
+}
+

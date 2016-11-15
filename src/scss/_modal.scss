@@ -1,0 +1,86 @@
+
+.modal-backdrop,
+.modal-backdrop-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-backdrop-bg {
+  pointer-events: none;
+}
+
+.modal {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: $z-index-modal;
+  overflow: hidden;
+  min-height: 100%;
+  width: 100%;
+  background-color: $modal-bg-color;
+}
+
+@media (min-width: $modal-inset-mode-break-point) {
+  
+  
+  .modal {
+    top: $modal-inset-mode-top;
+    right: $modal-inset-mode-right;
+    bottom: $modal-inset-mode-bottom;
+    left: $modal-inset-mode-left;
+    min-height: $modal-inset-mode-min-height;
+    width: (100% - $modal-inset-mode-left - $modal-inset-mode-right);
+  }
+
+  .modal.ng-leave-active {
+    bottom: 0;
+  }
+
+  
+  .platform-ios.platform-cordova .modal-wrapper .modal {
+    .bar-header:not(.bar-subheader) {
+      height: $bar-height;
+      > * {
+        margin-top: 0;
+      }
+    }
+    .tabs-top > .tabs,
+    .tabs.tabs-top {
+      top: $bar-height;
+    }
+    .has-header,
+    .bar-subheader {
+      top: $bar-height;
+    }
+    .has-subheader {
+      top: $bar-height + $bar-subheader-height;
+    }
+    .has-header.has-tabs-top {
+      top: $bar-height + $tabs-height;
+    }
+    .has-header.has-subheader.has-tabs-top {
+      top: $bar-height + $bar-subheader-height + $tabs-height;
+    }
+  }
+}
+
+
+.modal-open {
+  pointer-events: none;
+
+  .modal,
+  .modal-backdrop {
+    pointer-events: auto;
+  }
+  
+  &.loading-active {
+    .modal,
+    .modal-backdrop {
+      pointer-events: none;
+    }
+  }
+}

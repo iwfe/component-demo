@@ -1,0 +1,95 @@
+.dialog {
+    position: fixed;
+    z-index: 5000;
+    width: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $stable;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    .dialog_confirm & {
+        .dialog_head {
+            padding: 1.2em 20px .5em;
+        }
+        .dialog_body {
+            text-align: left;
+        }
+    }
+}
+
+.dialog-head {
+    padding: 1.2em 0 .5em;
+}
+
+.dialog-title {
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.dialog-body {
+    padding: 0 20px;
+    font-size: 15px;
+    color: $dark;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.dialog-foot {
+    position: relative;
+    line-height: 42px;
+    margin-top: 20px;
+    font-size: 17px;
+    &:after {
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        border-top: 1px solid #d5d5d6;
+        color: #d5d5d6;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .dialog {
+        width: 35%;
+    }
+}
+
+
+
+
+.vux-fade-transition {
+  opacity: 1;
+  transition: opacity linear 0.2s
+}
+
+.vux-fade-enter, .vux-fade-leave {
+  opacity: 0;
+}
+
+.vux-dialog-transition {
+  opacity: 1;
+  transition-duration: .4s;
+  transform: translate(-50%, -50%) scale(1)!important;
+  transition-property: transform, opacity!important;
+}
+
+.vux-dialog-enter, .vux-dialog-leave {
+  opacity: 0;
+}
+
+.vux-dialog-enter {
+  transform: translate(-50%, -50%) scale(1.185)!important;
+}
+
+.vux-dialog-leave {
+  transform: translate(-50%, -50%) scale(1)!important;
+}
