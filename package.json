@@ -7,7 +7,7 @@
     "build": "node ./build/webpack.start.js",
     "start": "rm -rf ./dist/* && npm run build",
     "copy": "cp -rf src/js/**  dist/",
-    "test": "karma start build/karma.conf.js"
+    "test": "karma start karma.config.js"
   },
   "keywords": [],
   "author": "mengyue",

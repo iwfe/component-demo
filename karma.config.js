@@ -14,14 +14,23 @@ webpackConfig = {
             loader:'babel',
             query:{
                 compact: false,
-                presets: ["es2015"],
+                presets: ["es2015","stage-0"],
                 // plugins: ["es6-promise"]
             },
-            exclude:[
-               path.resolve( __dirname, '../test' ), path.resolve( __dirname, '../node_modules' )
-            ]
+            exclude:'/node_modules/'
         }]
-    }
+    },
+    // bagel: {
+    //     enable: true,
+    //     options:{
+    //         stage: 2,
+    //         query:{
+    //             compact: false,
+    //             presets: ["es2015"],
+    //             // plugins: ["es6-promise"]
+    //         }
+    //     }
+    // }
 };
 
 
@@ -77,16 +86,20 @@ module.exports = function(config) {
         'test/testSpec.js':['webpack','babel','commonjs'],
     },
 
-    "babelPreprocessor": {
+    babelPreprocessor: {
         options:{
-            sourceMap: "inline"
+            sourceMap: "inline",
+            presets: ['es2015','stage-0'],
+            // plugins: ['transform-decorators-legacy', 'transform-es2015-modules-amd']
         },
-        filename: function(file) {
-            return file.originalPath.replace(/\.js$/, ".es5.js");
-        },
-        sourceFileName: function(file) {
-            return file.originalPath;
-        }
+        // filename: function(file) {
+        //     console.log(file);
+        //     return file.originalPath.replace(/\.js$/, ".es5.js");
+        // },
+        // sourceFileName: function(file) {
+        //     console.log(file);
+        //     return file.originalPath;
+        // }
     },
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -113,8 +126,8 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    // browsers: ['PhantomJS','Chrome'],
-    browsers: ['PhantomJS'],
+    browsers: ['PhantomJS','Chrome'],
+    // browsers: ['PhantomJS'],
     captureTimeout: 60000,
 
     // Continuous Integration mode

@@ -24,9 +24,9 @@
 import chai from 'chai'
 describe("start",function(){
     it("should return true",function(){
-        console.info(chai.expect(Reverse("abc")));
-        console.log('类型',typeof Reverse("abc"));
-        chai.expect(Reverse("abc")).to.equal("cba");
+        chai.assert.equal(Reverse("abc"),'cba','string handle success');
+        // chai.assert(Reverse("abc")==("cba");
+        // done();
     });      
 });
     
