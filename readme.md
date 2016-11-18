@@ -54,6 +54,14 @@
 2. 	mocha库   https://mochajs.org/
 3. 	chai断言库 http://chaijs.com/api/assert/
 	
-	
+##五  npm仓库相关操作
+
+1.  注册用户 npm adduser --registry http://192.168.1.121:4873/
+
+2.  设置registry npm config set registry http://192.168.1.121:4873/
+
+3.  npm publish
+
+安装: npm install iwfe --save
 	
 	
