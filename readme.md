@@ -13,7 +13,7 @@
 	* 			reset文件
 	* 			基本元素定义文件
 				
-2. 		js
+2. 	js
 	* 			base目录
 	* 			utils目录
 	* 			组件目录
@@ -51,8 +51,8 @@
 ##四、用到的测试框架：
 
 1. 	karma框架
-2. 	mocha库   [https://mochajs.org/]
-3. 	chai断言库  [http://chaijs.com/api/assert/]
+2. 	mocha库   https://mochajs.org/
+3. 	chai断言库 http://chaijs.com/api/assert/
 	
 	
 	
